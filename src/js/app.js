@@ -8,13 +8,13 @@ myApp.controller('WeatherCtrl', function ($scope, $http) {
     $scope.updateWeather = function() {
         var weather = { list:[], data: {}, clouds: null };
         var forecastDays = 30;
-        var todaysUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + $scope.location + ',at&units=metric&callback=JSON_CALLBACK&APPID=f9dbd911bc01df1d9ce563b2ba4d3209';
+        // var todaysUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + $scope.location + ',at&units=metric&callback=JSON_CALLBACK&APPID=f9dbd911bc01df1d9ce563b2ba4d3209';
         var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + $scope.location + ',at&units=metric&callback=JSON_CALLBACK&APPID=f9dbd911bc01df1d9ce563b2ba4d3209';
 
         $http.jsonp(forecastUrl).success(function(data) {
-            if ($scope.location != '' && data && data.list) {
+            if ($scope.location !== '' && data && data.list) {
                 for (var i = 0; i < forecastDays; i++) {
-                    if (i % 4 == 0) weather.list.push(data.list[i]); //show forecast for every 12 hours (3*4)
+                    if (i % 4 === 0) weather.list.push(data.list[i]); //show forecast for every 12 hours (3*4)
                 }
                 $scope.weather = weather;
             }
