@@ -29,8 +29,11 @@
         <section class="daySection" ng-repeat="day in weather.list">
             <h4>Weather for {{day.dt_txt}}</h4>
             <cloud-icon cloudiness="{{day.clouds.all}}"></cloud-icon>
-            <p>Min: {{day.main.temp_min | number :0}} &deg;C</p>
-            <p>Max: {{day.main.temp_max | number :0}} &deg;C</p>
+            <div>
+                <p>Temp: {{day.main.temp | number :0}} &deg;C</p>
+                <p>Humidity: {{day.main.humidity | number :0}} %</p>
+                <p>Pressure: {{day.main.pressure | number :0}}</p>
+            </div>
         </section>
     </form>
 </div>
