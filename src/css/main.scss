@@ -256,26 +256,29 @@ textarea {
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
     #mainSection {
         width: 85%;
+        max-width: 350px;
     }
     .daySection {
         min-width: 200px;
     }
 }
 
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 701px) {
     #mainSection {
-        margin: auto;
-        width: 15%;
-        text-align: center;
+        width: 350px;
     }
     .daySection {
         min-width: 250px;
     }
 }
 
+#mainSection {
+    margin: auto;
+    text-align: center;
+}
 .daySection {
     background: #e0f2f1;
     border: 2px solid #009688;
@@ -300,4 +303,7 @@ p {
 h4 {
     margin: 7px;
 }
-
+h2{
+    margin: auto;
+    text-align: center;
+}
